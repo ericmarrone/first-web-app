@@ -1,5 +1,9 @@
 require 'sinatra'
 
+get '/' do
+  redirect to('/home')
+end
+
 get '/home' do
   erb :index
 end
@@ -17,4 +21,8 @@ end
 get "/favourites" do
   @fav_links = [{ 'Google' => 'http://www.google.com'}, { 'Amazon'=> 'http://www.amazon.com'}]
   erb :favourites
+end
+
+get '/gallery' do
+  redirect to('/portfolio')
 end
